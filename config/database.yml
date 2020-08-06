@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+
+development:
+  <<: *default
+  database: rails_app_a_development
+  username: postgres123
+  password: postgres123
+
+test:
+  <<: *default
+  database: rails_app_a_test
+  username: postgres123
+  password: postgres123
+
+# production:
+#   <<: *default
+#   database: ecommerce_production
+#   username: ecommerce
+#   password: <%= ENV['ECOMMERCE_DATABASE_PASSWORD'] %>
